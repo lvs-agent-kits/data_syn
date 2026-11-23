@@ -1,0 +1,14 @@
+# frontend/Dockerfile
+FROM node:20-slim
+
+WORKDIR /app
+
+# 复制 package.json 并安装依赖
+COPY package*.json ./
+RUN rm -rf node_modules && npm install
+COPY . .
+
+# Vite 开发服务器
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
