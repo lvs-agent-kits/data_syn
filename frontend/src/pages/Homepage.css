@@ -1,0 +1,91 @@
+.docs-page {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px; /* 左侧固定，中间自适应，右侧固定 */
+  gap: 20px;
+}
+
+/*
+=============================================
+设计 aside 部分的格式 
+=============================================
+*/
+aside {
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid rgb(232, 215, 155);
+    left: 0px;
+    width: 300px;
+    height: 100vh;
+}
+
+.doc-nav {
+    display: flex;
+    flex-direction: column;    
+}
+
+/* 左侧文档目录的样式 */
+.doc-nav-item {
+    box-sizing: border-box; /* 计算 boder 时向内计算*/
+    background-color: inherit;  /* 继承父元素的背景色 */
+    border: 0;
+    height: 30px;
+    color: rgb(232, 215, 155);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 1em;                /* 首行缩进2个字符宽度 */ 
+    /* 用于让字体居中 */
+    display: inline-flex;           /* 改为 inline-flex */
+    align-items: center;            /* 垂直居中 */
+    font-size: 20px;
+}
+
+.doc-nav-item:hover {
+    border: 2px solid rgb(232, 215, 155);
+    border-radius: 10px; /* 圆角，左上、右上、右下、左下 */
+}
+
+.doc-nav-item.active {
+    background-color: rgb(25, 40, 80);
+    font-weight: bold;
+    /* 边框及其圆角样式 */
+    border: 2px solid rgb(232, 215, 155);
+    border-radius: 10px; /* 圆角，左上、右上、右下、左下 */
+}
+
+.doc-nav-item.active::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  width: 4px;
+  height: 26px;
+  background-color: #8ecbff;
+}
+
+.aside-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px 15px 10px 5px;      /* 上右下左 */
+    color: rgb(232, 215, 155);
+    border-bottom: 2px solid rgb(232, 215, 155);
+}
+
+h1 svg {
+    display: block;
+}
+
+/*
+=============================================
+设计 文章内容部分 的 CSS 
+=============================================
+*/
+.doc-title {
+    color: rgb(232, 215, 155);
+    text-align: center;
+    border-bottom: 2px solid rgb(232, 215, 155);
+    padding-bottom: 10px;
+}
+
+.doc-toc {
+    border-left: 2px solid rgb(232, 215, 155);
+}

@@ -4,8 +4,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
       MYSQL_DATABASE: data_syn
-      MYSQL_USER: data_syn_app
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?set MYSQL_PASSWORD in .env}
     ports:
       - "3306:3306"
     volumes:
@@ -28,7 +26,7 @@ services:
       DB_PORT: "3306"
       DB_NAME: data_syn
       DB_USER: data_syn_app
-      DB_PASSWORD: ${MYSQL_PASSWORD:?set MYSQL_PASSWORD in .env}
+      DB_PASSWORD: ${DB_PASSWORD} 
   frontend:  
     build:
       context: ./frontend 

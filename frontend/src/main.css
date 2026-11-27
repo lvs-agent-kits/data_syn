@@ -1,0 +1,18 @@
+/*
+\definecolor{navyblue}{RGB}{25, 40, 80} % Define navy blue
+\definecolor{navydark}{RGB}{15, 25, 55} % Darker navy blue for contrast
+\definecolor{navylight}{RGB}{65, 85, 135} % Lighter navy blue for backgrounds
+\definecolor{gold}{RGB}{212, 175, 55} % Gold color
+\definecolor{goldlight}{RGB}{232, 215, 155} % Light gold for backgrounds
+*/
+
+html, body {
+    margin: 0;          /* 消去距离浏览器边缘的 8px 白边 */
+    padding: 0;         /* 让子容器可以占满自身 */
+    height: 100%;       /* 占据整个浏览器内容 */
+}
+
+#root {
+    min-height: 100vh;  /* 占据父容器的所有高度 */
+    background-color : rgb(65, 85, 135);  /* lighter navy blue */
+}

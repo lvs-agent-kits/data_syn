@@ -27,14 +27,14 @@ export default function App() {
 
     async function loadMotifs() {
       try {
-        const response = await fetch(":8000/api/motifs", {
+        const response = await fetch("/api/motifs", {
           signal: controller.signal,
         });
 
         if (!response.ok) {
           throw new Error(`请求失败了喵：HTTP ${response.status}`);
         }
-
+        // console.log(response)
         const data = (await response.json()) as Motif[];
         setMotifs(data);
       } catch (err) {
@@ -96,7 +96,7 @@ export default function App() {
       </label>
 
       {loading && <p>正在加载母题……</p>}
-      {error && <p role="alert">加载失败：{error}</p>}
+      {error && <p role="alert">加载失败，Line 99：{error}</p>}
 
       {!loading && !error && (
         <div
